@@ -4,11 +4,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media;
 using FontAwesome.Sharp;
+using QuanLyKhoHang.Forms;
 using Color = System.Drawing.Color;
 
 namespace QuanLyKhoHang
@@ -18,7 +20,9 @@ namespace QuanLyKhoHang
         //Fields
         private IconButton currentBtn;
         private Panel leftBorderBtn;
-
+        private Form currentChildForm;
+        public static string nameUser;
+        private string name;
 
         //Constructor
         public fTableManager()
@@ -27,6 +31,16 @@ namespace QuanLyKhoHang
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7,60);
             pnMenu.Controls.Add(leftBorderBtn);
+            //Form
+            this.Text = String.Empty;
+            this.ControlBox = false;
+            this.DoubleBuffered = true;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+        }
+
+        public fTableManager(string name)
+        {
+            this.name = name;
         }
 
         //Structs
@@ -62,7 +76,7 @@ namespace QuanLyKhoHang
                 //Icon Current Child Form
                 iconCurrentChildForm.IconChar = currentBtn.IconChar;
                 iconCurrentChildForm.IconColor = color;
-                lbTitleChildForm.Text = currentBtn.Text;
+                //lbTitleChildForm.Text = currentBtn.Text;
             }    
         }
 
@@ -79,33 +93,57 @@ namespace QuanLyKhoHang
             }
         }
 
+        private void OpenChildForm(Form childForm)
+        {
+            if(currentChildForm != null)
+            {
+                //open only form
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(childForm);
+            panelDesktop.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            lbTitleChildForm.Text = childForm.Text;
+        }
+
         private void btnProduct_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new frmProduct());
         }
 
         private void btnImport_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new frmImport());
         }
 
         private void btnExport_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
+            OpenChildForm(new frmExport());
         }
 
         private void btnStatement_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color4);
+            OpenChildForm(new frmStatement());
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color5);
+            OpenChildForm(new frmSetting());
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
+            currentChildForm.Close();
             Reset();
         }
 
@@ -116,6 +154,27 @@ namespace QuanLyKhoHang
             iconCurrentChildForm.IconChar = IconChar.HouseChimneyUser;
             iconCurrentChildForm.IconColor = Color.MediumPurple;
             lbTitleChildForm.Text = "Home";
+        }
+        //Drag form
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        private void pnTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnSignOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void fTableManager_Load(object sender, EventArgs e)
+        {
+            lbName.Text = nameUser;
         }
     }
 }

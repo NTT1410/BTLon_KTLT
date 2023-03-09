@@ -9,6 +9,7 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace QuanLyKhoHang
@@ -56,8 +57,12 @@ namespace QuanLyKhoHang
         bool Login(string username, string passwork)
         {
             foreach (Account acc in accounts)
-                if (acc.UserName == username)
+                if (acc.UserName == username && acc.Password == passwork)
+                {
+                    fTableManager fTableManager = new fTableManager(acc.Name);
+                    fTableManager.nameUser = acc.Name;
                     return true;
+                }
             return false;
         }
 

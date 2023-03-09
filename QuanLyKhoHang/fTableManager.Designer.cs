@@ -38,12 +38,19 @@
             this.pnLogo = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.PictureBox();
             this.pnTitleBar = new System.Windows.Forms.Panel();
-            this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
+            this.iconUser = new FontAwesome.Sharp.IconPictureBox();
+            this.btnSignOut = new FontAwesome.Sharp.IconPictureBox();
             this.lbTitleChildForm = new System.Windows.Forms.Label();
+            this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
+            this.panelShadow = new System.Windows.Forms.Panel();
+            this.panelDesktop = new System.Windows.Forms.Panel();
+            this.lbName = new System.Windows.Forms.Label();
             this.pnMenu.SuspendLayout();
             this.pnLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.pnTitleBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSignOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
             this.SuspendLayout();
             // 
@@ -195,6 +202,9 @@
             // pnTitleBar
             // 
             this.pnTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.pnTitleBar.Controls.Add(this.lbName);
+            this.pnTitleBar.Controls.Add(this.iconUser);
+            this.pnTitleBar.Controls.Add(this.btnSignOut);
             this.pnTitleBar.Controls.Add(this.lbTitleChildForm);
             this.pnTitleBar.Controls.Add(this.iconCurrentChildForm);
             this.pnTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
@@ -202,6 +212,47 @@
             this.pnTitleBar.Name = "pnTitleBar";
             this.pnTitleBar.Size = new System.Drawing.Size(962, 75);
             this.pnTitleBar.TabIndex = 1;
+            this.pnTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnTitleBar_MouseDown);
+            // 
+            // iconUser
+            // 
+            this.iconUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.iconUser.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconUser.IconChar = FontAwesome.Sharp.IconChar.UserTag;
+            this.iconUser.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconUser.IconSize = 60;
+            this.iconUser.Location = new System.Drawing.Point(652, 3);
+            this.iconUser.Name = "iconUser";
+            this.iconUser.Size = new System.Drawing.Size(60, 66);
+            this.iconUser.TabIndex = 0;
+            this.iconUser.TabStop = false;
+            this.iconUser.Click += new System.EventHandler(this.btnSignOut_Click);
+            // 
+            // btnSignOut
+            // 
+            this.btnSignOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.btnSignOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSignOut.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnSignOut.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.btnSignOut.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnSignOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSignOut.Location = new System.Drawing.Point(927, 21);
+            this.btnSignOut.Name = "btnSignOut";
+            this.btnSignOut.Size = new System.Drawing.Size(32, 32);
+            this.btnSignOut.TabIndex = 0;
+            this.btnSignOut.TabStop = false;
+            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
+            // 
+            // lbTitleChildForm
+            // 
+            this.lbTitleChildForm.AutoSize = true;
+            this.lbTitleChildForm.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lbTitleChildForm.Location = new System.Drawing.Point(56, 21);
+            this.lbTitleChildForm.Name = "lbTitleChildForm";
+            this.lbTitleChildForm.Size = new System.Drawing.Size(44, 16);
+            this.lbTitleChildForm.TabIndex = 1;
+            this.lbTitleChildForm.Text = "Home";
             // 
             // iconCurrentChildForm
             // 
@@ -216,30 +267,54 @@
             this.iconCurrentChildForm.TabIndex = 0;
             this.iconCurrentChildForm.TabStop = false;
             // 
-            // lbTitleChildForm
+            // panelShadow
             // 
-            this.lbTitleChildForm.AutoSize = true;
-            this.lbTitleChildForm.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lbTitleChildForm.Location = new System.Drawing.Point(56, 21);
-            this.lbTitleChildForm.Name = "lbTitleChildForm";
-            this.lbTitleChildForm.Size = new System.Drawing.Size(44, 16);
-            this.lbTitleChildForm.TabIndex = 1;
-            this.lbTitleChildForm.Text = "Home";
+            this.panelShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
+            this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelShadow.Location = new System.Drawing.Point(220, 75);
+            this.panelShadow.Name = "panelShadow";
+            this.panelShadow.Size = new System.Drawing.Size(962, 9);
+            this.panelShadow.TabIndex = 2;
             // 
-            // fHomePage
+            // panelDesktop
+            // 
+            this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.Location = new System.Drawing.Point(220, 84);
+            this.panelDesktop.Name = "panelDesktop";
+            this.panelDesktop.Size = new System.Drawing.Size(962, 539);
+            this.panelDesktop.TabIndex = 3;
+            // 
+            // lbName
+            // 
+            this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lbName.Location = new System.Drawing.Point(718, 13);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(203, 32);
+            this.lbName.TabIndex = 2;
+            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // fTableManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 623);
+            this.Controls.Add(this.panelDesktop);
+            this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.pnTitleBar);
             this.Controls.Add(this.pnMenu);
-            this.Name = "fHomePage";
+            this.Name = "fTableManager";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fHomePage";
+            this.Load += new System.EventHandler(this.fTableManager_Load);
             this.pnMenu.ResumeLayout(false);
             this.pnLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.pnTitleBar.ResumeLayout(false);
             this.pnTitleBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSignOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
             this.ResumeLayout(false);
 
@@ -258,5 +333,10 @@
         private System.Windows.Forms.Panel pnTitleBar;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
         private System.Windows.Forms.Label lbTitleChildForm;
+        private System.Windows.Forms.Panel panelShadow;
+        private System.Windows.Forms.Panel panelDesktop;
+        private FontAwesome.Sharp.IconPictureBox btnSignOut;
+        private FontAwesome.Sharp.IconPictureBox iconUser;
+        private System.Windows.Forms.Label lbName;
     }
 }
