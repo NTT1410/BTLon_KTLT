@@ -141,7 +141,7 @@
             this.btnImport.FlatAppearance.BorderSize = 0;
             this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImport.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnImport.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
+            this.btnImport.IconChar = FontAwesome.Sharp.IconChar.CartArrowDown;
             this.btnImport.IconColor = System.Drawing.Color.Gainsboro;
             this.btnImport.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnImport.IconSize = 32;

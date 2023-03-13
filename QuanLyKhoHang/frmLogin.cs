@@ -43,6 +43,10 @@ namespace QuanLyKhoHang
             string password = txtPassword.Text;
             if(Login(username, password)==true)
             {
+                txtUser.Text = "UserName";
+                txtUser.ForeColor = Color.DarkGray;
+                txtPassword.Text = "PassWord";
+                txtPassword.ForeColor = Color.DarkGray;
                 fTableManager f = new fTableManager();
                 this.Hide();
                 f.ShowDialog();
@@ -71,6 +75,45 @@ namespace QuanLyKhoHang
             //string path = Application.StartupPath + "\\Source\\DBAccount.json";
             string path = @"D:\OU_3_HK2\KTLT\BaiTapLon\QuanLyKhoHang\QuanLyKhoHang\Source\DBAccount.json";
             accounts = ListAccount.readFile(path);
+            //int* p;
+            //p = &accounts[0];
+
+        }
+
+        private void txtUser_Enter(object sender, EventArgs e)
+        {
+            if(txtUser.Text == "UserName")
+            {
+                txtUser.Text = "";
+                txtUser.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtUser_Leave(object sender, EventArgs e)
+        {
+            if(txtUser.Text == "")
+            {
+                txtUser.Text = "UserName";
+                txtUser.ForeColor = Color.DarkGray;
+            }
+        }
+
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            if(txtPassword.Text == "PassWord")
+            {
+                txtPassword.Text = "";
+                txtPassword.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtPassword_Leave(object sender, EventArgs e)
+        {
+            if(txtPassword.Text == "")
+            {
+                txtPassword.Text = "PassWord";
+                txtPassword.ForeColor = Color.DarkGray;
+            }
         }
     }
 }

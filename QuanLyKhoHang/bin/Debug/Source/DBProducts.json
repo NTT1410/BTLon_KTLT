@@ -1,0 +1,37 @@
+[
+  {
+    "ProductID": "001",
+    "ProductName": "Iphone7",
+    "ProductTypeID": "000001",
+    "Quantity": "1",
+    "UnitPrice": "10000"
+  },
+  {
+    "ProductID": "002",
+    "ProductName": "Iphone8",
+    "ProductTypeID": "000001",
+    "Quantity": "3",
+    "UnitPrice": "10000"
+  },
+  {
+    "ProductID": "003",
+    "ProductName": "Iphone12",
+    "ProductTypeID": "000002",
+    "Quantity": "3",
+    "UnitPrice": "10000"
+  },
+  {
+    "ProductID": "004",
+    "ProductName": "Iphone13",
+    "ProductTypeID": "000001",
+    "Quantity": "4",
+    "UnitPrice": "10000"
+  },
+  {
+    "ProductID": "005",
+    "ProductName": "Iphone14",
+    "ProductTypeID": "000001",
+    "Quantity": "1",
+    "UnitPrice": "10000"
+  }
+]
