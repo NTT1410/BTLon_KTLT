@@ -35,6 +35,8 @@ namespace QuanLyKhoHang.Forms
 
                 throw ex;
             }
+
+            
             DataRow row;
             addTable(productTable);
             foreach (Product p in products)
@@ -56,7 +58,7 @@ namespace QuanLyKhoHang.Forms
 
         private void addTable(DataTable productTable)
         {
-
+            
             productTable.Columns.Add("ProductID");
             productTable.Columns.Add("ProductName");
             productTable.Columns.Add("Quantity");
@@ -132,5 +134,6 @@ namespace QuanLyKhoHang.Forms
         {
             dgvProduct.DataSource = productTable;
         }
+
     }
 }

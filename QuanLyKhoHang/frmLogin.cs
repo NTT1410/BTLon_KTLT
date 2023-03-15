@@ -42,14 +42,14 @@ namespace QuanLyKhoHang
             string password = txtPassword.Text;
             if(Login(username, password)==true)
             {
-                txtUser.Text = "UserName";
-                txtUser.ForeColor = Color.DarkGray;
-                txtPassword.Text = "PassWord";
-                txtPassword.ForeColor = Color.DarkGray;
                 fTableManager f = new fTableManager();
                 this.Hide();
                 f.ShowDialog();
                 this.Show();
+                txtPassword.ForeColor = Color.DarkGray;
+                txtUser.Text = "UserName";
+                txtUser.ForeColor = Color.DarkGray;
+                txtPassword.Text = "PassWord";
             }
             else
             {

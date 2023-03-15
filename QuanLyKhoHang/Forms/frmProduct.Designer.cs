@@ -34,6 +34,7 @@
             this.txtSearchProduct = new System.Windows.Forms.TextBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnAdd = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.SuspendLayout();
@@ -49,12 +50,10 @@
             this.btnProduct.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnProduct.IconSize = 32;
             this.btnProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProduct.Location = new System.Drawing.Point(534, 25);
+            this.btnProduct.Location = new System.Drawing.Point(418, 57);
             this.btnProduct.Name = "btnProduct";
-            this.btnProduct.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnProduct.Size = new System.Drawing.Size(139, 43);
+            this.btnProduct.Size = new System.Drawing.Size(39, 31);
             this.btnProduct.TabIndex = 2;
-            this.btnProduct.Text = "Filter";
             this.btnProduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProduct.UseVisualStyleBackColor = true;
@@ -88,9 +87,9 @@
             this.txtSearchProduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSearchProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchProduct.ForeColor = System.Drawing.Color.Gainsboro;
-            this.txtSearchProduct.Location = new System.Drawing.Point(12, 29);
+            this.txtSearchProduct.Location = new System.Drawing.Point(12, 51);
             this.txtSearchProduct.Name = "txtSearchProduct";
-            this.txtSearchProduct.Size = new System.Drawing.Size(516, 23);
+            this.txtSearchProduct.Size = new System.Drawing.Size(400, 23);
             this.txtSearchProduct.TabIndex = 1;
             this.txtSearchProduct.Text = "Nhập mã sản phẩm";
             this.txtSearchProduct.Enter += new System.EventHandler(this.txtSearchProduct_Enter);
@@ -98,12 +97,14 @@
             // 
             // iconButton1
             // 
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(679, 25);
+            this.iconButton1.Location = new System.Drawing.Point(12, 11);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(85, 34);
+            this.iconButton1.Size = new System.Drawing.Size(88, 25);
             this.iconButton1.TabIndex = 4;
             this.iconButton1.Text = "View All";
             this.iconButton1.UseVisualStyleBackColor = true;
@@ -112,10 +113,24 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(12, 55);
+            this.label1.Location = new System.Drawing.Point(12, 77);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(510, 5);
+            this.label1.Size = new System.Drawing.Size(400, 2);
             this.label1.TabIndex = 5;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnAdd.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnAdd.IconColor = System.Drawing.Color.Black;
+            this.btnAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAdd.Location = new System.Drawing.Point(103, 11);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(88, 25);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // frmProduct
             // 
@@ -123,10 +138,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(944, 492);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.txtSearchProduct);
             this.Controls.Add(this.btnProduct);
+            this.Controls.Add(this.txtSearchProduct);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.panel1);
             this.Name = "frmProduct";
             this.Text = "frmProduct";
@@ -146,5 +162,6 @@
         private System.Windows.Forms.TextBox txtSearchProduct;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Label label1;
+        private FontAwesome.Sharp.IconButton btnAdd;
     }
 }
