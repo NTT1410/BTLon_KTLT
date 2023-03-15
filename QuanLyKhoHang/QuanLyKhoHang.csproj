@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="dungChung.cs" />
     <Compile Include="Forms\frmExport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +102,12 @@
     </Compile>
     <Compile Include="Forms\frmImport.Designer.cs">
       <DependentUpon>frmImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmImportChild.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmImportChild.Designer.cs">
+      <DependentUpon>frmImportChild.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmProduct.cs">
       <SubType>Form</SubType>
@@ -132,13 +139,21 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="HDNhap.cs" />
     <Compile Include="ListAccount.cs" />
+    <Compile Include="ListHDNhap.cs" />
     <Compile Include="ListProduct.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\frmExport.resx">
       <DependentUpon>frmExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmImport.resx">
+      <DependentUpon>frmImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmImportChild.resx">
+      <DependentUpon>frmImportChild.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmProduct.resx">
       <DependentUpon>frmProduct.cs</DependentUpon>
@@ -203,4 +218,9 @@
     <None Include="bin\Debug\Images\iconMinimizeW.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties bin_4debug_4source_4dbtest_1json__JsonSchema="https://beaujs.com/schema.json" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

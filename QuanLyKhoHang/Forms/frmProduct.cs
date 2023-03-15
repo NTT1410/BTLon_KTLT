@@ -20,16 +20,43 @@ namespace QuanLyKhoHang.Forms
         {
             InitializeComponent();
         }
-        public void writeFile(string path)
-        {
-            string json = JsonConvert.SerializeObject(this);
-            File.WriteAllText(path, json);
-        }
         List<Product> products = new List<Product>();
         DataTable productTable;
         private void frmProduct_Load(object sender, EventArgs e)
         {
             productTable = new DataTable();
+            try
+            {
+                string path2 = Application.StartupPath + @"\Source\DBProducts.json";
+                products = ListProduct.readFile(path2);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            DataRow row;
+            addTable(productTable);
+            foreach (Product p in products)
+            {
+                row = productTable.NewRow();
+                row[0] = p.ProductID;
+                row[1] = p.ProductName;
+                row[2] = p.Quantity;
+                row[3] = p.ProductTypeID;
+                row[4] = p.UnitPrice;
+                productTable.Rows.Add(row);
+            }
+
+            ////Ghi FIle Json
+            //string path = Application.StartupPath + @"\Source\DBTest.json";
+            //string json = JsonConvert.SerializeObject(products);
+            //File.WriteAllText(path, json);
+        }
+
+        private void addTable(DataTable productTable)
+        {
+
             productTable.Columns.Add("ProductID");
             productTable.Columns.Add("ProductName");
             productTable.Columns.Add("Quantity");
@@ -42,39 +69,7 @@ namespace QuanLyKhoHang.Forms
             dgvProduct.Columns[1].Width = (int)(dgvProduct.Width * 0.20);
             dgvProduct.Columns[2].Width = (int)(dgvProduct.Width * 0.20);
             dgvProduct.Columns[3].Width = (int)(dgvProduct.Width * 0.20);
-            dgvProduct.Columns[4].Width = (int)(dgvProduct.Width * 0.20);
-
-            try
-            {
-                string path2 = Application.StartupPath + @"\Source\DBProducts.json";
-                products = ListProduct.readFile(path2);
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-            addProducts(products);
-
-            //Ghi FIle Json
-            string path = Application.StartupPath + @"\Source\DBTest.json";
-            string json = JsonConvert.SerializeObject(products);
-            File.WriteAllText(path, json);
-        }
-
-        private void addProducts(List<Product> products)
-        {
-            DataRow row;
-            foreach (Product p in products)
-            {
-                row = productTable.NewRow();
-                row[0] = p.ProductID;
-                row[1] = p.ProductName;
-                row[2] = p.Quantity;
-                row[3] = p.ProductTypeID;
-                row[4] = p.UnitPrice;
-                productTable.Rows.Add(row);
-            }
+            dgvProduct.Columns[4].Width = (int)(dgvProduct.Width * 0.20);           
         }
 
         private void txtSearchProduct_Enter(object sender, EventArgs e)
@@ -82,7 +77,7 @@ namespace QuanLyKhoHang.Forms
             if(txtSearchProduct.Text == "Nhập mã sản phẩm")
             {
                 txtSearchProduct.Text = "";
-                txtSearchProduct.ForeColor = Color.Black;
+                txtSearchProduct.ForeColor = Color.Gainsboro;
             }    
         }
 
@@ -97,27 +92,45 @@ namespace QuanLyKhoHang.Forms
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
-            productTable.Clear();   
+            if (txtSearchProduct.Text == "" || txtSearchProduct.Text == "Nhập mã sản phẩm")
+                MessageBox.Show("Vui lòng nhập mã sản phẩm cần tìm!!!");
+            else
+            {
+                searchProduct();
+                if (!searchProduct())
+                {
+                    MessageBox.Show("Không tìm thấy!!!");
+                    dgvProduct.DataSource = productTable;
+                }
+            }
+        }
+
+        bool searchProduct()
+        {
+            DataTable tempTable = new DataTable();
+            addTable(tempTable);
             DataRow row;
             foreach (Product p in products)
             {
-                if(p.ProductID == txtSearchProduct.Text)
+                if (p.ProductID == txtSearchProduct.Text)
                 {
-                    row = productTable.NewRow();
+                    row = tempTable.NewRow();
                     row[0] = p.ProductID;
                     row[1] = p.ProductName;
                     row[2] = p.Quantity;
                     row[3] = p.ProductTypeID;
                     row[4] = p.UnitPrice;
-                    productTable.Rows.Add(row);
+                    tempTable.Rows.Add(row);
+                    return true;
                 }
             }
+
+            return false;
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            productTable.Clear();
-            addProducts(products);
+            dgvProduct.DataSource = productTable;
         }
     }
 }

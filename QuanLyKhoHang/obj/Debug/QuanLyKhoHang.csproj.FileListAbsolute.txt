@@ -35,3 +35,5 @@ D:\OU_3_HK2\KTLT\BaiTapLon\QuanLyKhoHang\QuanLyKhoHang\bin\Debug\System.Threadin
 D:\OU_3_HK2\KTLT\BaiTapLon\QuanLyKhoHang\QuanLyKhoHang\bin\Debug\System.ValueTuple.xml
 D:\OU_3_HK2\KTLT\BaiTapLon\QuanLyKhoHang\QuanLyKhoHang\obj\Debug\QuanLyKhoHang.Forms.frmExport.resources
 D:\OU_3_HK2\KTLT\BaiTapLon\QuanLyKhoHang\QuanLyKhoHang\obj\Debug\QuanLyKhoHang.Forms.frmProduct.resources
+D:\OU_3_HK2\KTLT\BaiTapLon\QuanLyKhoHang\QuanLyKhoHang\obj\Debug\QuanLyKhoHang.Forms.frmImport.resources
+D:\OU_3_HK2\KTLT\BaiTapLon\QuanLyKhoHang\QuanLyKhoHang\obj\Debug\QuanLyKhoHang.Forms.frmImportChild.resources

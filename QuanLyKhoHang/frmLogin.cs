@@ -9,7 +9,6 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace QuanLyKhoHang
@@ -22,7 +21,7 @@ namespace QuanLyKhoHang
             InitializeComponent();
         }
 
-        List<Account> accounts = new List<Account>();
+        List<Account> accounts = new List<Account>();// --> 2d --> dataTB
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -73,7 +72,7 @@ namespace QuanLyKhoHang
         private void frmLogin_Load(object sender, EventArgs e)
         {
             //string path = Application.StartupPath + "\\Source\\DBAccount.json";
-            string path = @"D:\OU_3_HK2\KTLT\BaiTapLon\QuanLyKhoHang\QuanLyKhoHang\Source\DBAccount.json";
+            string path = Application.StartupPath + @"\Source\DBAccount.json";
             accounts = ListAccount.readFile(path);
             //int* p;
             //p = &accounts[0];

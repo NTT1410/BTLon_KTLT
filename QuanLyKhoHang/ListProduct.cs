@@ -19,23 +19,8 @@ namespace QuanLyKhoHang
             List<Product> products = new List<Product>();
             try
             {
-                var content = System.IO.File.ReadAllText(path);
-                JsonDocument doc = JsonDocument.Parse(content);
-                JsonElement root = doc.RootElement;
-                string json = JsonConvert.SerializeObject(root);
-
-                for (int i = 0; i < root.GetArrayLength(); i++)
-                {
-                    Product p = new Product();
-                    p.ProductID = root[i].GetProperty("ProductID").ToString();
-                    p.ProductName = root[i].GetProperty("ProductName").ToString();
-                    p.ProductTypeID = root[i].GetProperty("ProductTypeID").ToString();
-                    p.Quantity = root[i].GetProperty("Quantity").ToString();
-                    p.UnitPrice = root[i].GetProperty("UnitPrice").ToString();
-                    
-                    products.Add(p);
-                }
-
+                var content = File.ReadAllText(path);
+                products = JsonConvert.DeserializeObject<List<Product>>(content);
             }
             catch (Exception ex)
             {
@@ -43,11 +28,6 @@ namespace QuanLyKhoHang
                 throw ex;
             }
             return products;
-        }
-        public void writeFile(string path)
-        {
-            string json = JsonConvert.SerializeObject(this);
-            File.WriteAllText(path, json);
         }
     }
 }
