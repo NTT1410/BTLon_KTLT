@@ -45,7 +45,7 @@ namespace QuanLyKhoHang.Forms
                 row[0] = p.ProductID;
                 row[1] = p.ProductName;
                 row[2] = p.Quantity;
-                row[3] = p.ProductTypeID;
+                row[3] = p.CategoryID;
                 row[4] = p.UnitPrice;
                 productTable.Rows.Add(row);
             }
@@ -62,7 +62,7 @@ namespace QuanLyKhoHang.Forms
             productTable.Columns.Add("ProductID");
             productTable.Columns.Add("ProductName");
             productTable.Columns.Add("Quantity");
-            productTable.Columns.Add("ProductTypeID");
+            productTable.Columns.Add("CategoryID");
             productTable.Columns.Add("UnitPrice");
             dgvProduct.DataSource = productTable;
 
@@ -120,7 +120,7 @@ namespace QuanLyKhoHang.Forms
                     row[0] = p.ProductID;
                     row[1] = p.ProductName;
                     row[2] = p.Quantity;
-                    row[3] = p.ProductTypeID;
+                    row[3] = p.CategoryID;
                     row[4] = p.UnitPrice;
                     tempTable.Rows.Add(row);
                     return true;

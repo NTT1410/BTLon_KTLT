@@ -36,11 +36,11 @@
             this.time1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.time2 = new System.Windows.Forms.DateTimePicker();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnVIewAll = new FontAwesome.Sharp.IconButton();
+            this.btnExcel = new FontAwesome.Sharp.IconButton();
             this.btnDetail = new FontAwesome.Sharp.IconButton();
             this.btnNhap = new FontAwesome.Sharp.IconButton();
             this.btnSearch = new FontAwesome.Sharp.IconButton();
-            this.btnVIewAll = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHDNhap)).BeginInit();
             this.panel2.SuspendLayout();
@@ -78,7 +78,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.time2);
             this.panel2.Controls.Add(this.btnVIewAll);
-            this.panel2.Controls.Add(this.iconButton1);
+            this.panel2.Controls.Add(this.btnExcel);
             this.panel2.Controls.Add(this.btnDetail);
             this.panel2.Controls.Add(this.btnNhap);
             this.panel2.Controls.Add(this.btnSearch);
@@ -137,20 +137,35 @@
             this.time2.TabIndex = 6;
             this.time2.Value = new System.DateTime(2023, 3, 15, 0, 0, 0, 0);
             // 
-            // iconButton1
+            // btnVIewAll
             // 
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(213, 2);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(108, 25);
-            this.iconButton1.TabIndex = 2;
-            this.iconButton1.Text = "Xuất file";
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.btnDetail_Click);
+            this.btnVIewAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVIewAll.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnVIewAll.IconColor = System.Drawing.Color.Black;
+            this.btnVIewAll.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnVIewAll.Location = new System.Drawing.Point(594, 41);
+            this.btnVIewAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVIewAll.Name = "btnVIewAll";
+            this.btnVIewAll.Size = new System.Drawing.Size(108, 25);
+            this.btnVIewAll.TabIndex = 2;
+            this.btnVIewAll.Text = "Xem tất cả";
+            this.btnVIewAll.UseVisualStyleBackColor = true;
+            this.btnVIewAll.Click += new System.EventHandler(this.btnVIewAll_Click);
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcel.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnExcel.IconColor = System.Drawing.Color.Black;
+            this.btnExcel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExcel.Location = new System.Drawing.Point(213, 2);
+            this.btnExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(108, 25);
+            this.btnExcel.TabIndex = 2;
+            this.btnExcel.Text = "Xuất file";
+            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // btnDetail
             // 
@@ -197,21 +212,6 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // btnVIewAll
-            // 
-            this.btnVIewAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVIewAll.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnVIewAll.IconColor = System.Drawing.Color.Black;
-            this.btnVIewAll.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnVIewAll.Location = new System.Drawing.Point(594, 41);
-            this.btnVIewAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnVIewAll.Name = "btnVIewAll";
-            this.btnVIewAll.Size = new System.Drawing.Size(108, 25);
-            this.btnVIewAll.TabIndex = 2;
-            this.btnVIewAll.Text = "Xem tất cả";
-            this.btnVIewAll.UseVisualStyleBackColor = true;
-            this.btnVIewAll.Click += new System.EventHandler(this.btnVIewAll_Click);
-            // 
             // frmImport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -246,7 +246,7 @@
         private System.Windows.Forms.DateTimePicker time2;
         private FontAwesome.Sharp.IconButton btnNhap;
         private System.Windows.Forms.Label label3;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnExcel;
         private FontAwesome.Sharp.IconButton btnVIewAll;
     }
 }

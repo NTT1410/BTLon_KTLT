@@ -79,7 +79,7 @@ namespace QuanLyKhoHang.Forms
             dtb = new DataTable();
             try
             {
-                string path = Application.StartupPath + @"\Source\DBTest.json";
+                string path = Application.StartupPath + @"\Source\DBHDNhap.json";
                 string path2 = Application.StartupPath + @"\Source\DBProducts.json";
                 products = ListProduct.readFile(path2);
                 hDNhaps = ListHDNhap.readFile(path);
@@ -141,6 +141,61 @@ namespace QuanLyKhoHang.Forms
         {
             frmImportChild f = new frmImportChild();
             f.ShowDialog();
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            ToExcel(dgvHDNhap, "DBNhapHang", "nhaphang");
+        }
+
+        private void ToExcel(DataGridView dataGridView1, string fileName, string name)
+        {
+            //khai báo thư viện hỗ trợ Microsoft.Office.Interop.Excel
+            Microsoft.Office.Interop.Excel.Application excel;
+            Microsoft.Office.Interop.Excel.Workbook workbook;
+            Microsoft.Office.Interop.Excel.Worksheet worksheet;
+            try
+            {
+                //Tạo đối tượng COM.
+                excel = new Microsoft.Office.Interop.Excel.Application();
+                excel.Visible = false;
+                excel.DisplayAlerts = false;
+                //tạo mới một Workbooks bằng phương thức add()
+                workbook = excel.Workbooks.Add(Type.Missing);
+                worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Sheets["Sheet1"];
+                //đặt tên cho sheet
+                worksheet.Name = name;
+
+                // export header trong DataGridView
+                for (int i = 0; i < dataGridView1.ColumnCount; i++)
+                {
+                    worksheet.Cells[1, i + 1] = dataGridView1.Columns[i].HeaderText;
+                }
+                // export nội dung trong DataGridView
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                    {
+                        worksheet.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+                string path;
+                // sử dụng phương thức SaveAs() để lưu workbook với filename
+                workbook.SaveAs(fileName);
+                //đóng workbook
+                workbook.Close();
+                excel.Quit();
+                MessageBox.Show("Xuất dữ liệu ra Excel thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                workbook = null;
+                worksheet = null;
+            }
         }
     }
 }

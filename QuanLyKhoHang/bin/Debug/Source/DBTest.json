@@ -1,21 +1,25 @@
 [
   {
-    "IDNhap": "001",
-    "NgayNhap": "02/10/2022 10:15:53 CH",
     "HangNhap": [
       {
         "ProductID": "001",
-        "Quantity": "1"
+        "Quantity": "1",
+        "CategoryID": "1"
       },
       {
         "ProductID": "002",
-        "Quantity": "1"
+        "Quantity": "1",
+        "CategoryID": "1"
       },
       {
         "ProductID": "002",
-        "Quantity": "1"
+        "Quantity": "1",
+        "CategoryID": "1"
       }
-    ]
+    ],
+    "IDNhap": "001",
+    "NgayNhap": "02/10/2022 10:15:53 CH",
+    "SupplierID": "Di Động Thông Minh"
   },
   {
     "IDNhap": "002",
@@ -23,12 +27,32 @@
     "HangNhap": [
       {
         "ProductID": "001",
-        "Quantity": "1"
+        "Quantity": "1",
+        "CategoryID": "1"
       },
       {
         "ProductID": "002",
-        "Quantity": "1"
+        "Quantity": "1",
+        "CategoryID": "1"
       }
-    ]
+    ],
+    "SupplierID": "Di Động Thông Minh"
+  },
+  {
+    "IDNhap": "557832",
+    "NgayNhap": "17/03/2023 2:44:25 SA",
+    "HangNhap": [
+      {
+        "ProductID": "MB5304",
+        "Quantity": "3",
+        "CategoryID": "2"
+      },
+      {
+        "ProductID": "IP4155",
+        "Quantity": "2",
+        "CategoryID": "1"
+      }
+    ],
+    "SupplierID": "Apple"
   }
 ]

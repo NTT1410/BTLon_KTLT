@@ -89,7 +89,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account.cs" />
+    <Compile Include="Instance\Account.cs" />
     <Compile Include="dungChung.cs" />
     <Compile Include="Forms\frmExport.cs">
       <SubType>Form</SubType>
@@ -139,13 +139,19 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="HDNhap.cs" />
-    <Compile Include="ListAccount.cs" />
-    <Compile Include="ListHDNhap.cs" />
-    <Compile Include="ListProduct.cs" />
-    <Compile Include="Product.cs" />
+    <Compile Include="Instance\Category.cs" />
+    <Compile Include="Instance\HDNhap.cs" />
+    <Compile Include="Instance\HDXuat.cs" />
+    <Compile Include="ListDB\ListAccount.cs" />
+    <Compile Include="ListDB\ListCategory.cs" />
+    <Compile Include="ListDB\ListHDNhap.cs" />
+    <Compile Include="ListDB\ListHDXuat.cs" />
+    <Compile Include="ListDB\ListProduct.cs" />
+    <Compile Include="ListDB\ListSupplier.cs" />
+    <Compile Include="Instance\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Instance\Supplier.cs" />
     <EmbeddedResource Include="Forms\frmExport.resx">
       <DependentUpon>frmExport.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +164,12 @@
     <EmbeddedResource Include="Forms\frmProduct.resx">
       <DependentUpon>frmProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSetting.resx">
+      <DependentUpon>frmSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmStatement.resx">
+      <DependentUpon>frmStatement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fTableManager.resx">
       <DependentUpon>fTableManager.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,7 +181,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="bin\Debug\Source\DBProductType.json" />
+    <None Include="bin\Debug\Source\DBCategory.json" />
+    <None Include="bin\Debug\Source\DBTest.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -188,7 +201,7 @@
     <None Include="bin\Debug\Source\DBAccount.json" />
     <None Include="bin\Debug\Source\DBProducts.json" />
     <None Include="bin\Debug\Source\DBSuppliers.json" />
-    <None Include="bin\Debug\Source\DBTest.json" />
+    <None Include="bin\Debug\Source\DBHDNhap.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -217,6 +230,36 @@
   <ItemGroup>
     <None Include="bin\Debug\Images\iconMinimizeW.png" />
   </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>

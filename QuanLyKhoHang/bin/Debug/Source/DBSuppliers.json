@@ -1,3 +1,14 @@
-{
-
-}
+[
+  {
+    "SupplierID": "001",
+    "SupplierName": "Apple"
+  },
+  {
+    "SupplierID": "002",
+    "SupplierName": "Di Động Thông Minh"
+  },
+  {
+    "SupplierID": "003",
+    "SupplierName": "Công ty Bình Minh"
+  }
+]

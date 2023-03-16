@@ -2,36 +2,43 @@
   {
     "ProductID": "001",
     "ProductName": "Iphone7",
-    "ProductTypeID": "000001",
+    "CategoryID": "1",
     "Quantity": "1",
     "UnitPrice": "10000"
   },
   {
     "ProductID": "002",
     "ProductName": "Iphone8",
-    "ProductTypeID": "000001",
+    "CategoryID": "1",
     "Quantity": "3",
     "UnitPrice": "10000"
   },
   {
     "ProductID": "003",
     "ProductName": "Iphone12",
-    "ProductTypeID": "000002",
+    "CategoryID": "1",
     "Quantity": "3",
     "UnitPrice": "10000"
   },
   {
     "ProductID": "004",
     "ProductName": "Iphone13",
-    "ProductTypeID": "000001",
+    "CategoryID": "1",
     "Quantity": "4",
     "UnitPrice": "10000"
   },
   {
     "ProductID": "005",
     "ProductName": "Iphone14",
-    "ProductTypeID": "000001",
+    "CategoryID": "1",
     "Quantity": "1",
     "UnitPrice": "10000"
+  },
+  {
+    "ProductID": "006",
+    "ProductName": "MacBook Air 2020",
+    "CategoryID": "2",
+    "Quantity": "1",
+    "UnitPrice": "35000"
   }
 ]
