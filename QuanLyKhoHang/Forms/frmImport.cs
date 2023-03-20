@@ -91,25 +91,28 @@ namespace QuanLyKhoHang.Forms
             }
             addHDNhap(dtb);
             DataRow row;
-            foreach (HDNhap h in hDNhaps)
+            if (hDNhaps != null && products != null)
             {
-                int count = 0;
-                int Dsum = 0;
-                row = dtb.NewRow();
-                row[0] = h.IDNhap;
-                row[1] = h.NgayNhap;
-                foreach (HangNhap hn in h.HangNhap)
+                foreach (HDNhap h in hDNhaps)
                 {
-                    foreach(Product p in products)
+                    int count = 0;
+                    int Dsum = 0;
+                    row = dtb.NewRow();
+                    row[0] = h.IDNhap;
+                    row[1] = h.NgayNhap;
+                    foreach (HangNhap hn in h.HangNhap)
                     {
-                        if (hn.ProductID == p.ProductID)
-                            Dsum = Dsum + int.Parse(hn.Quantity) * int.Parse(p.UnitPrice);
+                        foreach (Product p in products)
+                        {
+                            if (hn.ProductID == p.ProductID)
+                                Dsum = Dsum + int.Parse(hn.Quantity) * int.Parse(p.UnitPrice);
+                        }
+                        count++;
                     }
-                    count++;
-                }
-                row[2] = count;
-                row[3] = Dsum.ToString("#,###");
-                dtb.Rows.Add(row);
+                    row[2] = count;
+                    row[3] = Dsum.ToString("#,###");
+                    dtb.Rows.Add(row);
+                } 
             }
         }
 

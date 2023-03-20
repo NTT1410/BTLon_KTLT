@@ -19,7 +19,6 @@ namespace QuanLyKhoHang.Forms
     {
         private int sum;
         private int maHD;
-        private int maSP;
         Random rd = new Random();
         public frmImportChild()
         {
@@ -42,9 +41,12 @@ namespace QuanLyKhoHang.Forms
             suppliers = ListSupplier.readFile(path3);
             categories = ListCategory.readFile(path4);
             randomMHD();
-            foreach (HDNhap hdn in hDNhaps)
-                while (maHD == int.Parse(hdn.IDNhap))
-                    randomMHD();
+            if (hDNhaps != null)
+            {
+                foreach (HDNhap hdn in hDNhaps)
+                    while (maHD == int.Parse(hdn.IDNhap))
+                        randomMHD(); 
+            }
             txtIDHD.Text = maHD.ToString();
             nSoLuong.Maximum = 50;
             foreach (Supplier s in suppliers)
@@ -63,10 +65,6 @@ namespace QuanLyKhoHang.Forms
         private void randomMHD()
         {
             maHD = rd.Next(100000, 999999);
-        }
-        private void randomMSP()
-        {
-            maSP = rd.Next(1000, 9999);
         }
         private void addTable(DataTable productTable)
         {
@@ -120,45 +118,50 @@ namespace QuanLyKhoHang.Forms
         }
         public void addRow()
         {
-            randomMSP();
             DataRow row;
-            foreach (Product p in products)
+            if (products != null)
             {
-                if (p.ProductName == cbbTensp.Text)
+                foreach (Product p in products)
                 {
-                    row = dt.NewRow();
-                    row[0] = p.CategoryID;
-                    if (p.CategoryID == "1")
-                        row[1] = "IP" + maSP.ToString();
-                    else if (p.CategoryID == "2")
-                        row[1] = "MB" + maSP.ToString();
-                    row[2] = p.ProductName;
-                    row[3] = p.UnitPrice;
-                    row[4] = nSoLuong.Value.ToString();
-                    dt.Rows.Add(row);
-                    sum = sum + int.Parse(p.UnitPrice) * int.Parse(nSoLuong.Value.ToString());
+                    if (p.ProductName == cbbTensp.Text)
+                    {
+                        row = dt.NewRow();
+                        row[0] = p.CategoryID;
+                        row[1] = p.ProductID;
+                        row[2] = p.ProductName;
+                        row[3] = p.UnitPrice;
+                        row[4] = nSoLuong.Value.ToString();
+                        dt.Rows.Add(row);
+                        sum = sum + int.Parse(p.UnitPrice) * int.Parse(nSoLuong.Value.ToString());
+                    }
                 }
+                txtSum.Text = sum.ToString(); 
             }
-            txtSum.Text = sum.ToString();
         }
         private void cbbDongsp_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbbTensp.Items.Clear();
             cbbTensp.Text = "";
-            foreach (Product p in products)
+            if (products != null && categories != null)
             {
-                foreach(Category c in categories)
+                foreach (Product p in products)
                 {
-                    if (cbbDongsp.SelectedItem.ToString() == c.CategoryName && c.CategoryID == p.CategoryID)
+                    foreach (Category c in categories)
                     {
-                        cbbTensp.Items.Add(p.ProductName);
+                        if (cbbDongsp.SelectedItem.ToString() == c.CategoryName && c.CategoryID == p.CategoryID)
+                        {
+                            cbbTensp.Items.Add(p.ProductName);
+                        }
                     }
-                }    
+                }
             }
+            else MessageBox.Show("trống dữ liệu");
         }
 
         private void saveFile()
         {
+            if (hDNhaps == null)
+                hDNhaps = new List<HDNhap>();
             HDNhap h = new HDNhap();
             h.IDNhap = txtIDHD.Text;
             h.NgayNhap = dateTimePicker1.Value.ToString();
@@ -171,19 +174,43 @@ namespace QuanLyKhoHang.Forms
                 hn.CategoryID = row.Cells[0].Value.ToString();
                 n.Add(hn);
                 h.HangNhap = n;
+                foreach(Product p in products)
+                {
+                    if(p.ProductID == hn.ProductID)
+                    {
+                        p.Quantity = (int.Parse(p.Quantity) + int.Parse(hn.Quantity)).ToString();
+                    txtDonGia.Text = (int.Parse(p.Quantity) + int.Parse(hn.Quantity)).ToString();
+                    }
+                }
             }
             h.SupplierID = cbbSupplier.Text;
             hDNhaps.Add(h);
 
-            string path5 = Application.StartupPath + @"\Source\DBHDNhap.json";
+            //string path5 = Application.StartupPath + @"\Source\DBHDNhap.json";
             string json = JsonConvert.SerializeObject(hDNhaps);
-            File.WriteAllText(path5, json);
+            string json1 = JsonConvert.SerializeObject(products);
+            File.WriteAllText(path2, json);
+            File.WriteAllText(path, json1);
         }
 
         private void btnSaveFile_Click(object sender, EventArgs e)
         {
             ////Ghi FIle Json
-            saveFile();
+            
+            if (cbbDongsp.Text == "")
+                MessageBox.Show("Dòng sản phẩm không được trống!!!");
+            else if (cbbTensp.Text == "")
+                MessageBox.Show("Tên sản phẩm không được trống!!!");
+            else if (cbbSupplier.Text == "")
+                MessageBox.Show("Nhà cung cấp không được trống!!!");
+            else if (dgvNhap.Rows.Count == 0)
+                MessageBox.Show("Không có sản phẩm nào trong hóa đơn để thêm!!!");
+            else if (MessageBox.Show("Bạn có thật sự muốn lưu?", "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                MessageBox.Show("Lưu hóa đơn thành công");
+                saveFile();
+                this.Close();
+            }
         }
     }
 }

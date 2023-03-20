@@ -1,11 +1,11 @@
 [
   {
-    "CategoryID": "1",
+    "CategoryID": "IP",
     "CategoryName": "Iphone",
     "SupplierID": "001"
   },
   {
-    "CategoryID": "2",
+    "CategoryID": "MB",
     "CategoryName": "MacBook",
     "SupplierID": "003"
   }

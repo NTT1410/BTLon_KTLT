@@ -17,10 +17,10 @@ namespace QuanLyKhoHang
         public string CategoryID { get; set; }
         public string UnitPrice { get; set; }
 
-        public void writeFile(string path)
-        {
-            string json = JsonConvert.SerializeObject(this);
-            File.WriteAllText(path, json);
-        }
+        //public void writeFile(string path)
+        //{
+        //    string json = JsonConvert.SerializeObject(this);
+        //    File.WriteAllText(path, json);
+        //}
     }
 }

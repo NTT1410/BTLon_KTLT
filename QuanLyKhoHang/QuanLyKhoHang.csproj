@@ -89,6 +89,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\frmProductChild.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmProductChild.Designer.cs">
+      <DependentUpon>frmProductChild.cs</DependentUpon>
+    </Compile>
     <Compile Include="Instance\Account.cs" />
     <Compile Include="dungChung.cs" />
     <Compile Include="Forms\frmExport.cs">
@@ -163,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmProduct.resx">
       <DependentUpon>frmProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmProductChild.resx">
+      <DependentUpon>frmProductChild.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSetting.resx">
       <DependentUpon>frmSetting.cs</DependentUpon>

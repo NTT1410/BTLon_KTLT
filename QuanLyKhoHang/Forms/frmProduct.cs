@@ -35,19 +35,20 @@ namespace QuanLyKhoHang.Forms
 
                 throw ex;
             }
-
-            
-            DataRow row;
-            addTable(productTable);
-            foreach (Product p in products)
+            if (products!=null)
             {
-                row = productTable.NewRow();
-                row[0] = p.ProductID;
-                row[1] = p.ProductName;
-                row[2] = p.Quantity;
-                row[3] = p.CategoryID;
-                row[4] = p.UnitPrice;
-                productTable.Rows.Add(row);
+                DataRow row;
+                addTable(productTable);
+                foreach (Product p in products)
+                {
+                    row = productTable.NewRow();
+                    row[0] = p.ProductID;
+                    row[1] = p.ProductName;
+                    row[2] = p.Quantity;
+                    row[3] = p.CategoryID;
+                    row[4] = p.UnitPrice;
+                    productTable.Rows.Add(row);
+                } 
             }
 
             ////Ghi FIle Json
@@ -135,5 +136,10 @@ namespace QuanLyKhoHang.Forms
             dgvProduct.DataSource = productTable;
         }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmProductChild f = new frmProductChild();
+            f.ShowDialog();
+        }
     }
 }
