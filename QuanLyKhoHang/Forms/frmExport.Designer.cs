@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvXuat = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.time1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,10 +41,9 @@
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnDetail = new FontAwesome.Sharp.IconButton();
             this.btnSearch = new FontAwesome.Sharp.IconButton();
-            this.dgvXuat = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvXuat)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -53,6 +53,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(920, 386);
             this.panel1.TabIndex = 0;
+            // 
+            // dgvXuat
+            // 
+            this.dgvXuat.AllowUserToAddRows = false;
+            this.dgvXuat.AllowUserToDeleteRows = false;
+            this.dgvXuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvXuat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvXuat.Location = new System.Drawing.Point(0, 0);
+            this.dgvXuat.Name = "dgvXuat";
+            this.dgvXuat.ReadOnly = true;
+            this.dgvXuat.RowHeadersWidth = 51;
+            this.dgvXuat.RowTemplate.Height = 24;
+            this.dgvXuat.Size = new System.Drawing.Size(920, 386);
+            this.dgvXuat.TabIndex = 0;
             // 
             // label1
             // 
@@ -107,6 +121,7 @@
             this.btnXuat.TabIndex = 2;
             this.btnXuat.Text = "Xuất";
             this.btnXuat.UseVisualStyleBackColor = true;
+            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
             // 
             // panel2
             // 
@@ -148,6 +163,7 @@
             this.btnVIewAll.TabIndex = 2;
             this.btnVIewAll.Text = "Xem tất cả";
             this.btnVIewAll.UseVisualStyleBackColor = true;
+            this.btnVIewAll.Click += new System.EventHandler(this.btnVIewAll_Click);
             // 
             // iconButton1
             // 
@@ -190,17 +206,7 @@
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Xem";
             this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // dgvXuat
-            // 
-            this.dgvXuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvXuat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvXuat.Location = new System.Drawing.Point(0, 0);
-            this.dgvXuat.Name = "dgvXuat";
-            this.dgvXuat.RowHeadersWidth = 51;
-            this.dgvXuat.RowTemplate.Height = 24;
-            this.dgvXuat.Size = new System.Drawing.Size(920, 386);
-            this.dgvXuat.TabIndex = 0;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // frmExport
             // 
@@ -212,10 +218,11 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmExport";
             this.Text = "frmExport";
+            this.Load += new System.EventHandler(this.frmExport_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvXuat)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvXuat)).EndInit();
             this.ResumeLayout(false);
 
         }

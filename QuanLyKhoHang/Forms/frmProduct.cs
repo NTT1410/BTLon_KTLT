@@ -11,6 +11,9 @@ using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Windows.Controls;
 using Newtonsoft.Json;
+using System.Reflection;
+using QuanLyKhoHang.Instance;
+using QuanLyKhoHang.ListDB;
 
 namespace QuanLyKhoHang.Forms
 {
@@ -21,7 +24,10 @@ namespace QuanLyKhoHang.Forms
             InitializeComponent();
         }
         List<Product> products = new List<Product>();
+        List<RemoveProduct> removeproducts = new List<RemoveProduct>();
         DataTable productTable;
+
+        string path1 = Application.StartupPath + @"\Source\DBRemoveP.json";
         private void frmProduct_Load(object sender, EventArgs e)
         {
             productTable = new DataTable();
@@ -29,6 +35,7 @@ namespace QuanLyKhoHang.Forms
             {
                 string path2 = Application.StartupPath + @"\Source\DBProducts.json";
                 products = ListProduct.readFile(path2);
+                removeproducts = ListRemove.readFile(path1);
             }
             catch (Exception ex)
             {
@@ -140,6 +147,45 @@ namespace QuanLyKhoHang.Forms
         {
             frmProductChild f = new frmProductChild();
             f.ShowDialog();
+        }
+        public int index;
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có thật sự muốn xóa?", "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                index = dgvProduct.CurrentCell.RowIndex;
+                RemoveProduct rmp = new RemoveProduct();
+                rmp.ProductID = dgvProduct.Rows[index].Cells[0].Value.ToString();
+                rmp.ProductName = dgvProduct.Rows[index].Cells[1].Value.ToString();
+                rmp.Quantity = dgvProduct.Rows[index].Cells[2].Value.ToString();
+                foreach (Product px in products)
+                    if (px.ProductID == rmp.ProductID)
+                        rmp.UnitPrice = px.UnitPrice;
+                rmp.CategoryID = dgvProduct.Rows[index].Cells[4].Value.ToString();
+                rmp.NgayXoa = DateTime.Now.ToString();
+                removeproducts.Add(rmp);
+                dgvProduct.Rows.RemoveAt(index);
+                List<Product> prd = new List<Product>();
+                foreach (DataGridViewRow row in dgvProduct.Rows)
+                {
+                    Product p = new Product();
+                    p.ProductID = row.Cells[0].Value.ToString();
+                    p.ProductName = row.Cells[1].Value.ToString();
+                    p.Quantity = row.Cells[2].Value.ToString();
+                    foreach (Product px in products)
+                        if (px.ProductID == p.ProductID)
+                            p.UnitPrice = px.UnitPrice;
+                    p.CategoryID = row.Cells[4].Value.ToString();
+                    prd.Add(p);
+                }
+                string json = JsonConvert.SerializeObject(prd);
+                string json1 = JsonConvert.SerializeObject(removeproducts);
+                string path = Application.StartupPath + @"\Source\DBProducts.json";
+                File.WriteAllText(path, json);
+                File.WriteAllText(path1, json1);
+                MessageBox.Show("Xóa thành công!!!");
+            }
+                
         }
     }
 }

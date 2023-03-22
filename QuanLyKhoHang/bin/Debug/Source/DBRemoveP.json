@@ -1,0 +1,50 @@
+[
+  {
+    "ProductID": "IP9848",
+    "ProductName": "abc",
+    "Quantity": "0",
+    "CategoryID": "IP",
+    "UnitPrice": "123123",
+    "NgayXoa": "23/03/2023 3:38:22 SA"
+  },
+  {
+    "ProductID": "IP9848",
+    "ProductName": "abc",
+    "Quantity": "0",
+    "CategoryID": "IP",
+    "UnitPrice": "123123",
+    "NgayXoa": "23/03/2023 3:46:55 SA"
+  },
+  {
+    "ProductID": "IP9848",
+    "ProductName": "abc",
+    "Quantity": "0",
+    "CategoryID": "IP",
+    "UnitPrice": "123123",
+    "NgayXoa": "23/03/2023 3:47:44 SA"
+  },
+  {
+    "ProductID": "IP9848",
+    "ProductName": "abc",
+    "Quantity": "0",
+    "CategoryID": "IP",
+    "UnitPrice": "123123",
+    "NgayXoa": "23/03/2023 3:47:45 SA"
+  },
+  {
+    "ProductID": "IP9848",
+    "ProductName": "abc",
+    "Quantity": "0",
+    "CategoryID": "IP",
+    "UnitPrice": "123123",
+    "NgayXoa": "23/03/2023 3:47:45 SA"
+  },
+  {
+    "CategoryID": "IP",
+    "NgayXoa": "23/03/2023 3:50:02 SA",
+    "ProductID": "IP9848",
+    "ProductName": "abc",
+    "Quantity": "0",
+    "UnitPrice": "123123"
+  }
+]

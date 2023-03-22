@@ -215,7 +215,7 @@ namespace QuanLyKhoHang.Forms
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            dgvNhap.SelectedRows.Clear();
+            dgvNhap.Rows.RemoveAt(dgvNhap.CurrentCell.RowIndex);
         }
     }
 }

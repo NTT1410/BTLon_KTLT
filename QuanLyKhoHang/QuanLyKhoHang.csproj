@@ -89,6 +89,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\frmExportChild.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmExportChild.Designer.cs">
+      <DependentUpon>frmExportChild.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmProductChild.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,11 +154,13 @@
     <Compile Include="Instance\Category.cs" />
     <Compile Include="Instance\HDNhap.cs" />
     <Compile Include="Instance\HDXuat.cs" />
+    <Compile Include="Instance\RemoveProduct.cs" />
     <Compile Include="ListDB\ListAccount.cs" />
     <Compile Include="ListDB\ListCategory.cs" />
     <Compile Include="ListDB\ListHDNhap.cs" />
     <Compile Include="ListDB\ListHDXuat.cs" />
     <Compile Include="ListDB\ListProduct.cs" />
+    <Compile Include="ListDB\ListRemove.cs" />
     <Compile Include="ListDB\ListSupplier.cs" />
     <Compile Include="Instance\Product.cs" />
     <Compile Include="Program.cs" />
@@ -163,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmImport.resx">
       <DependentUpon>frmImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmExportChild.resx">
+      <DependentUpon>frmExportChild.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmImportChild.resx">
       <DependentUpon>frmImportChild.cs</DependentUpon>
@@ -191,7 +202,8 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="bin\Debug\Source\DBCategory.json" />
-    <None Include="bin\Debug\Source\DBTest.json" />
+    <None Include="bin\Debug\Source\DBRemoveP.json" />
+    <None Include="bin\Debug\Source\DBHDXuat.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -270,9 +282,5 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <ProjectExtensions>
-    <VisualStudio>
-      <UserProperties bin_4debug_4source_4dbtest_1json__JsonSchema="https://beaujs.com/schema.json" />
-    </VisualStudio>
-  </ProjectExtensions>
+  <ProjectExtensions />
 </Project>

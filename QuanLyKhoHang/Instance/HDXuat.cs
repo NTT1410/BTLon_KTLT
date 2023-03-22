@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace QuanLyKhoHang.Instance
 {
-    internal class HDXuat
+    public class HDXuat
     {
+        public string IDXuat { get; set; }
+        public string NgayXuat { get; set; }
+        public List<HangXuat> HangXuat { get; set; }
+        public string SupplierID { get; set; }
+    }
+    public class HangXuat
+    {
+        public string ProductID { get; set; }
+        public string Quantity { get; set; }
+        public string CategoryID { get; set; }
     }
 }
