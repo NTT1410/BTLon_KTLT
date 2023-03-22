@@ -45,8 +45,8 @@ namespace QuanLyKhoHang.Forms
                     row[0] = p.ProductID;
                     row[1] = p.ProductName;
                     row[2] = p.Quantity;
-                    row[3] = p.CategoryID;
-                    row[4] = p.UnitPrice;
+                    row[3] = int.Parse(p.UnitPrice).ToString("#,###");
+                    row[4] = p.CategoryID;
                     productTable.Rows.Add(row);
                 } 
             }
@@ -63,16 +63,16 @@ namespace QuanLyKhoHang.Forms
             productTable.Columns.Add("ProductID");
             productTable.Columns.Add("ProductName");
             productTable.Columns.Add("Quantity");
+            productTable.Columns.Add("UnitPrice (vnđ)");
             productTable.Columns.Add("CategoryID");
-            productTable.Columns.Add("UnitPrice");
             dgvProduct.DataSource = productTable;
 
 
             dgvProduct.Columns[0].Width = (int)(dgvProduct.Width * 0.20);
             dgvProduct.Columns[1].Width = (int)(dgvProduct.Width * 0.20);
-            dgvProduct.Columns[2].Width = (int)(dgvProduct.Width * 0.20);
-            dgvProduct.Columns[3].Width = (int)(dgvProduct.Width * 0.20);
-            dgvProduct.Columns[4].Width = (int)(dgvProduct.Width * 0.20);           
+            dgvProduct.Columns[2].Width = (int)(dgvProduct.Width * 0.15);
+            dgvProduct.Columns[3].Width = (int)(dgvProduct.Width * 0.24);           
+            dgvProduct.Columns[4].Width = (int)(dgvProduct.Width * 0.15);
         }
 
         private void txtSearchProduct_Enter(object sender, EventArgs e)
@@ -121,8 +121,8 @@ namespace QuanLyKhoHang.Forms
                     row[0] = p.ProductID;
                     row[1] = p.ProductName;
                     row[2] = p.Quantity;
-                    row[3] = p.CategoryID;
-                    row[4] = p.UnitPrice;
+                    row[3] = p.UnitPrice;
+                    row[4] = p.CategoryID;
                     tempTable.Rows.Add(row);
                     return true;
                 }

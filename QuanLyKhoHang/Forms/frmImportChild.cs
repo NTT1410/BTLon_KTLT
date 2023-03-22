@@ -212,5 +212,10 @@ namespace QuanLyKhoHang.Forms
                 this.Close();
             }
         }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            dgvNhap.SelectedRows.Clear();
+        }
     }
 }

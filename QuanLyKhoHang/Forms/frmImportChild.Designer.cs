@@ -41,7 +41,7 @@
             this.btnSaveFile = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.btnRemove = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnAdd = new FontAwesome.Sharp.IconButton();
@@ -168,6 +168,7 @@
             // dgvNhap
             // 
             this.dgvNhap.AllowUserToAddRows = false;
+            this.dgvNhap.AllowUserToDeleteRows = false;
             this.dgvNhap.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.dgvNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhap.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -196,7 +197,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.iconButton3);
-            this.panel3.Controls.Add(this.iconButton2);
+            this.panel3.Controls.Add(this.btnRemove);
             this.panel3.Controls.Add(this.btnSaveFile);
             this.panel3.Location = new System.Drawing.Point(15, 12);
             this.panel3.Name = "panel3";
@@ -216,18 +217,19 @@
             this.iconButton3.Text = "Thoát";
             this.iconButton3.UseVisualStyleBackColor = true;
             // 
-            // iconButton2
+            // btnRemove
             // 
-            this.iconButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.Location = new System.Drawing.Point(78, 0);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(72, 27);
-            this.iconButton2.TabIndex = 2;
-            this.iconButton2.Text = "Xóa";
-            this.iconButton2.UseVisualStyleBackColor = true;
+            this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemove.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnRemove.IconColor = System.Drawing.Color.Black;
+            this.btnRemove.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRemove.Location = new System.Drawing.Point(78, 0);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(72, 27);
+            this.btnRemove.TabIndex = 2;
+            this.btnRemove.Text = "Xóa";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // panel4
             // 
@@ -440,7 +442,7 @@
         private FontAwesome.Sharp.IconButton btnSaveFile;
         private System.Windows.Forms.Panel panel3;
         private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton btnRemove;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
