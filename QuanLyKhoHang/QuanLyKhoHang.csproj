@@ -76,6 +76,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -94,6 +95,12 @@
     </Compile>
     <Compile Include="Forms\frmExportChild.Designer.cs">
       <DependentUpon>frmExportChild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmImportDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmImportDetail.Designer.cs">
+      <DependentUpon>frmImportDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmProductChild.cs">
       <SubType>Form</SubType>
@@ -177,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmImportChild.resx">
       <DependentUpon>frmImportChild.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmImportDetail.resx">
+      <DependentUpon>frmImportDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmProduct.resx">
       <DependentUpon>frmProduct.cs</DependentUpon>

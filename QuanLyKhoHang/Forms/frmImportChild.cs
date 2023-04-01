@@ -25,7 +25,6 @@ namespace QuanLyKhoHang.Forms
             InitializeComponent();
         }
         DataTable dt;
-        DataTable HDNhap;
         List<Product> products = new List<Product>();
         List<HDNhap> hDNhaps= new List<HDNhap>();
         List<Supplier> suppliers = new List<Supplier>();

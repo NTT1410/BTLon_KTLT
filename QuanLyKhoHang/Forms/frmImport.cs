@@ -19,6 +19,8 @@ namespace QuanLyKhoHang.Forms
         {
             InitializeComponent();
         }
+        public Product pDetail = new Product();
+        public HDNhap nDetail = new HDNhap();
         List<HDNhap> hDNhaps = new List<HDNhap>();
         List<Product> products = new List<Product>();
         DataTable dtb;
@@ -118,7 +120,20 @@ namespace QuanLyKhoHang.Forms
 
         private void btnDetail_Click(object sender, EventArgs e)
         {
-
+            int index = dgvHDNhap.CurrentCell.RowIndex;
+            nDetail.IDNhap = dgvHDNhap.Rows[index].Cells[0].Value.ToString();
+            nDetail.NgayNhap = dgvHDNhap.Rows[index].Cells[1].Value.ToString();
+            foreach(HDNhap n in hDNhaps)
+            {
+                if(n.IDNhap == nDetail.IDNhap)
+                {
+                    nDetail.SupplierID = n.SupplierID;
+                    nDetail.HangNhap = n.HangNhap;
+                }    
+            }    
+            frmImportDetail f = new frmImportDetail();
+            frmImportDetail.nDetail = nDetail;
+            f.ShowDialog();
         }
 
         private void addHDNhap(DataTable dtb)
@@ -199,6 +214,12 @@ namespace QuanLyKhoHang.Forms
                 workbook = null;
                 worksheet = null;
             }
+        }
+
+        private void dgvHDNhap_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //int index = dgvHDNhap.CurrentCell.RowIndex;
+            //btnDetail.Text = dgvHDNhap.Rows[index].Cells[0].Value.ToString();
         }
     }
 }

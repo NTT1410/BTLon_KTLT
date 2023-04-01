@@ -42,3 +42,4 @@ D:\OU_3_HK2\KTLT\BaiTapLon\QuanLyKhoHang\QuanLyKhoHang\obj\Debug\QuanLyKhoHang.F
 D:\OU_3_HK2\KTLT\BaiTapLon\QuanLyKhoHang\QuanLyKhoHang\obj\Debug\QuanLyKhoHang.Forms.frmStatement.resources
 D:\OU_3_HK2\KTLT\BaiTapLon\QuanLyKhoHang\QuanLyKhoHang\obj\Debug\QuanLyKhoHang.Forms.frmProductChild.resources
 D:\OU_3_HK2\KTLT\BaiTapLon\QuanLyKhoHang\QuanLyKhoHang\obj\Debug\QuanLyKhoHang.Forms.frmExportChild.resources
+D:\OU_3_HK2\KTLT\BaiTapLon\QuanLyKhoHang\QuanLyKhoHang\obj\Debug\QuanLyKhoHang.Forms.frmImportDetail.resources

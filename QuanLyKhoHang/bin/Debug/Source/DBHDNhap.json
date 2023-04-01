@@ -1,1 +1,75 @@
-[{"IDNhap":"724242","NgayNhap":"20/03/2023 1:23:03 CH","HangNhap":[{"ProductID":"IP8439","Quantity":"3","CategoryID":"IP"}],"SupplierID":"Công ty Bình Minh"},{"IDNhap":"276591","NgayNhap":"23/03/2002 2:53:02 SA","HangNhap":[{"ProductID":"IP7398","Quantity":"1","CategoryID":"IP"}],"SupplierID":"Apple"}]
+[
+  {
+    "HangNhap": [
+      {
+        "ProductID": "IP1268",
+        "Quantity": "30",
+        "CategoryID": "IP"
+      },
+      {
+        "ProductID": "IP6305",
+        "Quantity": "24",
+        "CategoryID": "IP"
+      },
+      {
+        "ProductID": "IP3492",
+        "Quantity": "11",
+        "CategoryID": "IP"
+      }
+    ],
+    "IDNhap": "306270",
+    "NgayNhap": "24/03/2023 3:13:51 SA",
+    "SupplierID": "Apple"
+  },
+  {
+    "IDNhap": "688688",
+    "NgayNhap": "24/03/2023 3:14:37 SA",
+    "HangNhap": [
+      {
+        "ProductID": "IP8665",
+        "Quantity": "6",
+        "CategoryID": "IP"
+      },
+      {
+        "ProductID": "IP9364",
+        "Quantity": "8",
+        "CategoryID": "IP"
+      },
+      {
+        "ProductID": "IP9465",
+        "Quantity": "12",
+        "CategoryID": "IP"
+      }
+    ],
+    "SupplierID": "Di Động Thông Minh"
+  },
+  {
+    "IDNhap": "329779",
+    "NgayNhap": "24/03/2023 3:15:01 SA",
+    "HangNhap": [
+      {
+        "ProductID": "MB7333",
+        "Quantity": "13",
+        "CategoryID": "MB"
+      },
+      {
+        "ProductID": "MB4052",
+        "Quantity": "6",
+        "CategoryID": "MB"
+      }
+    ],
+    "SupplierID": "Công ty Bình Minh"
+  },
+  {
+    "IDNhap": "185546",
+    "NgayNhap": "24/03/2002 4:07:11 SA",
+    "HangNhap": [
+      {
+        "ProductID": "IP9364",
+        "Quantity": "1",
+        "CategoryID": "IP"
+      }
+    ],
+    "SupplierID": "Di Động Thông Minh"
+  }
+]

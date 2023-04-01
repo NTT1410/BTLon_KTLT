@@ -67,8 +67,10 @@
             this.dgvHDNhap.ReadOnly = true;
             this.dgvHDNhap.RowHeadersWidth = 51;
             this.dgvHDNhap.RowTemplate.Height = 24;
+            this.dgvHDNhap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHDNhap.Size = new System.Drawing.Size(920, 386);
             this.dgvHDNhap.TabIndex = 0;
+            this.dgvHDNhap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHDNhap_CellClick);
             // 
             // panel2
             // 
