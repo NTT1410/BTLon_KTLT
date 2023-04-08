@@ -30,14 +30,14 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNCC = new System.Windows.Forms.TextBox();
             this.txtIDHD = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvNhapDetail = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtNCC = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtSum = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -75,6 +75,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin hóa đơn";
             // 
+            // txtNCC
+            // 
+            this.txtNCC.Location = new System.Drawing.Point(746, 31);
+            this.txtNCC.Name = "txtNCC";
+            this.txtNCC.ReadOnly = true;
+            this.txtNCC.Size = new System.Drawing.Size(162, 27);
+            this.txtNCC.TabIndex = 18;
+            // 
             // txtIDHD
             // 
             this.txtIDHD.Location = new System.Drawing.Point(110, 31);
@@ -92,6 +100,18 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(249, 27);
             this.dateTimePicker1.TabIndex = 14;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label2.Location = new System.Drawing.Point(627, 38);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 20);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Nhà cung cấp";
             // 
             // label8
             // 
@@ -139,26 +159,6 @@
             this.dgvNhapDetail.RowTemplate.Height = 24;
             this.dgvNhapDetail.Size = new System.Drawing.Size(927, 310);
             this.dgvNhapDetail.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(627, 38);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 20);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Nhà cung cấp";
-            // 
-            // txtNCC
-            // 
-            this.txtNCC.Location = new System.Drawing.Point(746, 31);
-            this.txtNCC.Name = "txtNCC";
-            this.txtNCC.ReadOnly = true;
-            this.txtNCC.Size = new System.Drawing.Size(162, 27);
-            this.txtNCC.TabIndex = 18;
             // 
             // panel5
             // 

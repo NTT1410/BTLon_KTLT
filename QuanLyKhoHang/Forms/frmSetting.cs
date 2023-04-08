@@ -16,13 +16,5 @@ namespace QuanLyKhoHang.Forms
         {
             InitializeComponent();
         }
-
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-            fTableManager f = new fTableManager();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLyKhoHang.Instance;
+using QuanLyKhoHang.ListDB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +20,7 @@ namespace QuanLyKhoHang.Forms
         }
         private int sum = 0;
         List<Product> products = new List<Product>();
+        List<RemoveProduct> removeProducts = new List<RemoveProduct>();
         public static Product pDetail = new Product();
         public static HDNhap nDetail = new HDNhap();
         DataTable dt;
@@ -26,6 +29,7 @@ namespace QuanLyKhoHang.Forms
             try
             {
                 products = ListProduct.readFile(Application.StartupPath + @"\Source\DBProducts.json");
+                removeProducts = ListRemove.readFile(Application.StartupPath + @"\Source\DBRemoveP.json");
             }
             catch (Exception ex)
             {
@@ -56,6 +60,13 @@ namespace QuanLyKhoHang.Forms
                         row[1] = p.ProductName;
                         row[2] = int.Parse(p.UnitPrice).ToString("#,###");
                         sum = sum + int.Parse(p.UnitPrice) * int.Parse(n.Quantity);
+                    }
+                foreach (RemoveProduct r in removeProducts)
+                    if (r.ProductID == n.ProductID)
+                    {
+                        row[1] = r.ProductName;
+                        row[2] = int.Parse(r.UnitPrice).ToString("#,###");
+                        sum = sum + int.Parse(r.UnitPrice) * int.Parse(n.Quantity);
                     }
                 row[3] = n.Quantity;
                 dt.Rows.Add(row);

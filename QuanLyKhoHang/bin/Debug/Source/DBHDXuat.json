@@ -1,1 +1,55 @@
-[{"IDXuat":"606796","NgayXuat":"24/03/2023 3:15:21 SA","HangXuat":[{"ProductID":"IP1268","Quantity":"5","CategoryID":"IP"},{"ProductID":"IP6305","Quantity":"4","CategoryID":"IP"}],"SupplierID":null},{"IDXuat":"850539","NgayXuat":"24/03/2023 3:15:48 SA","HangXuat":[{"ProductID":"IP3492","Quantity":"7","CategoryID":"IP"},{"ProductID":"IP8665","Quantity":"3","CategoryID":"IP"}],"SupplierID":null},{"IDXuat":"453300","NgayXuat":"24/03/2023 3:16:08 SA","HangXuat":[{"ProductID":"IP9465","Quantity":"6","CategoryID":"IP"},{"ProductID":"MB4052","Quantity":"5","CategoryID":"MB"},{"ProductID":"MB7333","Quantity":"9","CategoryID":"MB"}],"SupplierID":null}]
+[
+  {
+    "HangXuat": [
+      {
+        "ProductID": "IP1268",
+        "Quantity": "5",
+        "CategoryID": "IP"
+      },
+      {
+        "ProductID": "IP6305",
+        "Quantity": "4",
+        "CategoryID": "IP"
+      }
+    ],
+    "IDXuat": "606796",
+    "NgayXuat": "24/03/2023 3:15:21 SA"
+  },
+  {
+    "IDXuat": "850539",
+    "NgayXuat": "24/03/2023 3:15:48 SA",
+    "HangXuat": [
+      {
+        "ProductID": "IP3492",
+        "Quantity": "7",
+        "CategoryID": "IP"
+      },
+      {
+        "ProductID": "IP8665",
+        "Quantity": "3",
+        "CategoryID": "IP"
+      }
+    ]
+  },
+  {
+    "IDXuat": "453300",
+    "NgayXuat": "24/03/2023 3:16:08 SA",
+    "HangXuat": [
+      {
+        "ProductID": "IP9465",
+        "Quantity": "6",
+        "CategoryID": "IP"
+      },
+      {
+        "ProductID": "MB4052",
+        "Quantity": "5",
+        "CategoryID": "MB"
+      },
+      {
+        "ProductID": "MB7333",
+        "Quantity": "9",
+        "CategoryID": "MB"
+      }
+    ]
+  }
+]

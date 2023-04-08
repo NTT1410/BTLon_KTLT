@@ -11,7 +11,6 @@ namespace QuanLyKhoHang.Instance
         public string IDXuat { get; set; }
         public string NgayXuat { get; set; }
         public List<HangXuat> HangXuat { get; set; }
-        public string SupplierID { get; set; }
     }
     public class HangXuat
     {

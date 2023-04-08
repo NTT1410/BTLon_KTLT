@@ -40,11 +40,19 @@
     "NgayXoa": "23/03/2023 3:47:45 SA"
   },
   {
-    "CategoryID": "IP",
-    "NgayXoa": "23/03/2023 3:50:02 SA",
     "ProductID": "IP9848",
     "ProductName": "abc",
     "Quantity": "0",
-    "UnitPrice": "123123"
+    "CategoryID": "IP",
+    "UnitPrice": "123123",
+    "NgayXoa": "23/03/2023 3:50:02 SA"
+  },
+  {
+    "CategoryID": "IP",
+    "NgayXoa": "01/04/2023 10:11:45 CH",
+    "ProductID": "IP1268",
+    "ProductName": "Iphone 5",
+    "Quantity": "25",
+    "UnitPrice": "1200000"
   }
 ]

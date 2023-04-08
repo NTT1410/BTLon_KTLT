@@ -65,6 +65,7 @@
             this.dgvXuat.ReadOnly = true;
             this.dgvXuat.RowHeadersWidth = 51;
             this.dgvXuat.RowTemplate.Height = 24;
+            this.dgvXuat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvXuat.Size = new System.Drawing.Size(920, 386);
             this.dgvXuat.TabIndex = 0;
             // 
@@ -192,6 +193,7 @@
             this.btnDetail.TabIndex = 2;
             this.btnDetail.Text = "Xem chi tiết";
             this.btnDetail.UseVisualStyleBackColor = true;
+            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // btnSearch
             // 

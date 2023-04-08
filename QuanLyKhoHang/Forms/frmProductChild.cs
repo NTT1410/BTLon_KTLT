@@ -24,6 +24,7 @@ namespace QuanLyKhoHang.Forms
         private int maSP;
         Random rd = new Random();
         List<Product> products = new List<Product>();
+        List<RemoveProduct> removeProducts = new List<RemoveProduct>();
         List<Category> categories = new List<Category>();
         DataTable dtProduct;
         DataTable dtCategory;
@@ -34,14 +35,19 @@ namespace QuanLyKhoHang.Forms
         }
         string path1 = Application.StartupPath + @"\Source\DBProducts.json";
         string path2 = Application.StartupPath + @"\Source\DBCategory.json";
+        string path3 = Application.StartupPath + @"\Source\DBRemoveP.json";
         private void frmProductChild_Load(object sender, EventArgs e)
         {
             dtProduct = new DataTable();
             dtCategory = new DataTable();
             randomMSP();
+            foreach (Product p in products)
+                while (maSP == int.Parse(p.ProductID))
+                    randomMSP();
             try
             {
                 products = ListProduct.readFile(path1);
+                removeProducts = ListRemove.readFile(path3);
                 categories = ListCategory.readFile(path2);
             }
             catch (Exception ex)

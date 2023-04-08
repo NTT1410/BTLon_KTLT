@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace QuanLyKhoHang.Forms
 {
@@ -18,6 +19,8 @@ namespace QuanLyKhoHang.Forms
         {
             InitializeComponent();
         }
+        public Product pDetail = new Product();
+        public HDXuat xDetail = new HDXuat();
         List<HDXuat> hDXuats= new List<HDXuat>();
         List<Product> products = new List<Product>();
         DataTable dtx;
@@ -130,6 +133,23 @@ namespace QuanLyKhoHang.Forms
                 if (tempHDXuat.Rows.Count > 0)
                     return true;
             return false;
+        }
+
+        private void btnDetail_Click(object sender, EventArgs e)
+        {
+            int index = dgvXuat.CurrentCell.RowIndex;
+            xDetail.IDXuat = dgvXuat.Rows[index].Cells[0].Value.ToString();
+            xDetail.NgayXuat = dgvXuat.Rows[index].Cells[1].Value.ToString();
+            foreach (HDXuat n in hDXuats)
+            {
+                if (n.IDXuat == xDetail.IDXuat)
+                {
+                    xDetail.HangXuat = n.HangXuat;
+                }
+            }
+            frmExportDetail f = new frmExportDetail();
+            frmExportDetail.xDetail = xDetail;
+            f.ShowDialog();
         }
     }
 }
